@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import { useWalletModal } from "../WalletModal";
 import { Login } from "../WalletModal/types";
+import { HamburgerIcon, WalletIcon } from "./icons";
 
 interface Props {
   account?: string;
@@ -22,6 +23,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
             onPresentAccountModal();
           }}
         >
+          <WalletIcon width="24px" color="text" />
           {accountEllipsis}
         </Button>
       ) : (

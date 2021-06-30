@@ -5,7 +5,14 @@ import { SvgProps } from "../../../components/Svg/types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 24 24" {...props}>
-      <path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
+      <g id="more_horiz" transform="translate(-4 0)">
+        <path
+          id="Vector"
+          d="M2,0A2,2,0,1,0,4,2,2.006,2.006,0,0,0,2,0ZM14,0a2,2,0,1,0,2,2A2.006,2.006,0,0,0,14,0ZM8,0a2,2,0,1,0,2,2A2.006,2.006,0,0,0,8,0Z"
+          transform="translate(4 10)"
+          fill="#e4baf0"
+        />
+      </g>
     </Svg>
   );
 };

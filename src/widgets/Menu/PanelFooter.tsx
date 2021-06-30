@@ -22,7 +22,6 @@ const Container = styled.div`
   flex: none;
   padding: 8px 4px;
   background-color: ${({ theme }) => theme.nav.background};
-  border-top: solid 2px rgba(133, 133, 133, 0.1);
 `;
 
 const PriceLink = styled.a`
@@ -41,7 +40,7 @@ const PriceLink = styled.a`
 const SettingsEntry = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 16px;
 `;
@@ -86,38 +85,6 @@ const PanelFooter: React.FC<Props> = ({
         ) : (
           <Skeleton width={80} height={24} />
         )}
-        <Dropdown
-          position="top-right"
-          target={
-            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-            </Button>
-          }
-        >
-          {langs.map((lang) => (
-            <MenuButton
-              key={lang.code}
-              fullWidth
-              onClick={() => setLang(lang)}
-              // Safari fix
-              style={{ minHeight: "32px", height: "auto" }}
-            >
-              {lang.language}
-            </MenuButton>
-          ))}
-        </Dropdown>
-      </SocialEntry>
-      <SettingsEntry>
-        {/*<Button variant="text" onClick={() => toggleTheme(!isDark)}>*/}
-        {/*/!* alignItems center is a Safari fix *!/*/}
-        {/*<Flex alignItems="center">*/}
-        {/*<SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />*/}
-        {/*<Text color="textDisabled" mx="4px">*/}
-        {/*/*/}
-        {/*</Text>*/}
-        {/*<MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />*/}
-        {/*</Flex>*/}
-        {/*</Button>*/}
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
@@ -145,6 +112,42 @@ const PanelFooter: React.FC<Props> = ({
             );
           })}
         </Flex>
+      </SocialEntry>
+      <SettingsEntry>
+        <Dropdown
+          position="top-right"
+          target={
+            <Button
+              style={{ padding: "0 0 0 24px" }}
+              variant="text"
+              startIcon={<LanguageIcon color="icon" width="24px" />}
+            >
+              <Text color="icon">{currentLang?.toUpperCase()}</Text>
+            </Button>
+          }
+        >
+          {langs.map((lang) => (
+            <MenuButton
+              key={lang.code}
+              fullWidth
+              onClick={() => setLang(lang)}
+              // Safari fix
+              style={{ minHeight: "32px", height: "auto" }}
+            >
+              {lang.language}
+            </MenuButton>
+          ))}
+        </Dropdown>
+        {/*<Button variant="text" onClick={() => toggleTheme(!isDark)}>*/}
+        {/*/!* alignItems center is a Safari fix *!/*/}
+        {/*<Flex alignItems="center">*/}
+        {/*<SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />*/}
+        {/*<Text color="textDisabled" mx="4px">*/}
+        {/*/*/}
+        {/*</Text>*/}
+        {/*<MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />*/}
+        {/*</Flex>*/}
+        {/*</Button>*/}
       </SettingsEntry>
     </Container>
   );

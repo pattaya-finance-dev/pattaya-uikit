@@ -115,21 +115,6 @@ export const links = [
 
 export const socials = [
   {
-    label: "Github",
-    icon: "GithubIcon",
-    href: "https://github.com/pantherswap",
-  },
-  {
-    label: "Docs",
-    icon: "GitbookIcon",
-    href: "https://docs.pantherswap.com",
-  },
-  {
-    label: "Medium",
-    icon: "MediumIcon",
-    href: "https://pantherswap.medium.com",
-  },
-  {
     label: "Twitter",
     icon: "TwitterIcon",
     href: "https://twitter.com/PantherSwap",
